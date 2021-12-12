@@ -1,0 +1,54 @@
+body {
+    /* Annuler la marge par defaut des navigateurs */
+    margin: 0;
+}
+
+#container, main>* {
+    /* Rendre flexibles le conteneur principal et le main */
+    display: flex;
+}
+
+#container {
+    /* Aligner au centre le contenu (main) du conteneur (container) */
+    justify-content: center;
+}
+
+main {
+    /* Forcer un maximum de 500px pour ce conteneur flexible */
+    width: 500px;
+}
+
+form {
+    /* Aerer entre les zones ecrans et pave numerique */
+    margin-bottom: 20px;
+}
+
+main>div {
+    /* Forcer le passage a la ligne des items quand plus d'espace disponible */
+    flex-wrap: wrap;
+}
+
+.break {
+    /* Forcer les points de rupture a prendre tout l'espace disponible.
+    Dans un conteneur flexible + wrap (main>div) cela fait passer a la ligne (rupture) */
+    flex-basis: 100%;
+}
+
+input, button {
+    height: 2rem;
+    margin: 5px;
+}
+
+input {
+    /* Les navigateurs calculent des largeurs par defaut pour les inputs,
+    ici on demande d'occuper tout l'espace disponible en largeur */
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+}
+
+button {
+    /* Chaque item (bouton) occupe equitablement l'espace disponible */
+    flex-grow: 1;
+    cursor: pointer;
+}
